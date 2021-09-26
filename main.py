@@ -8,15 +8,13 @@ def getVlan(path: str):
 
 
 def createVlan(vlans: list, pathout: str):
-    cmdCreateVl = ["create vlan ", " tag "]
-    cmdConfVl = ["config vlan ", " add tagged "]
     output = open(pathout, 'w')
     for vlan in vlans:
-        output.write(cmdCreateVl[0] + vlan[0] + cmdCreateVl[1] + vlan[1] + "\n")
-        output.write(cmdConfVl[0] + vlan[0] + cmdConfVl[1] + vlan[2] + "\n")
+        output.write("create vlan " + vlan[0] + " tag " + vlan[1] + "\n")
+        output.write("config vlan " + vlan[0] + " add tagged " + vlan[2] + "\n")
     output.close()
 
 
 lst = getVlan("vlans.txt")
-createVlan(lst, "resultCmdList.txt")
+createVlan(lst, "output/resultCmdList.txt")
 print(lst)
