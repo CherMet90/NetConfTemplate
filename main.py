@@ -1,5 +1,5 @@
-import getData
-import createVlan
+from common.getData import getData
+from common.createVlan import createVlan
 
-lst = getData.getData("input/vlans.txt")
-createVlan.createVlan(lst, "output/resultCmdList.txt")
+lst = getData("input/vlans.txt")
+createVlan(lst, "output/resultCmdList.txt")
