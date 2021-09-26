@@ -15,6 +15,6 @@ def createVlan(vlans: list, pathout: str):
     output.close()
 
 
-lst = getVlan("vlans.txt")
+lst = getVlan("input/vlans.txt")
 createVlan(lst, "output/resultCmdList.txt")
 print(lst)
